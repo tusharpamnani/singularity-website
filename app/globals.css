@@ -1,0 +1,232 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Authentic Space Theme - Black hole void with cosmic elements */
+  --background: oklch(0.02 0 0); /* Pure black hole void */
+  --foreground: oklch(0.98 0.02 180); /* Star white */
+  --card: oklch(0.05 0.01 280); /* Nebula purple-black */
+  --card-foreground: oklch(0.95 0.02 180);
+  --popover: oklch(0.05 0.01 280);
+  --popover-foreground: oklch(0.95 0.02 180);
+  --primary: oklch(0.8 0.3 280); /* Nebula purple */
+  --primary-foreground: oklch(0.02 0 0);
+  --secondary: oklch(0.08 0.02 320); /* Deep cosmic purple */
+  --secondary-foreground: oklch(0.9 0.2 340); /* Cosmic pink */
+  --muted: oklch(0.04 0.01 280);
+  --muted-foreground: oklch(0.7 0.1 180); /* Muted starlight */
+  --accent: oklch(0.85 0.35 200); /* Electric blue star */
+  --accent-foreground: oklch(0.02 0 0);
+  --destructive: oklch(0.75 0.3 15); /* Supernova red */
+  --destructive-foreground: oklch(0.98 0.02 180);
+  --border: oklch(0.15 0.03 280);
+  --input: oklch(0.03 0.01 280);
+  --ring: oklch(0.8 0.3 280); /* Nebula purple ring */
+  --chart-1: oklch(0.8 0.3 280); /* Nebula purple */
+  --chart-2: oklch(0.85 0.35 200); /* Electric blue star */
+  --chart-3: oklch(0.9 0.25 340); /* Cosmic pink */
+  --chart-4: oklch(0.8 0.25 60); /* Star amber */
+  --chart-5: oklch(0.85 0.3 180); /* Cyan star */
+  --radius: 0.625rem;
+  --sidebar: oklch(0.05 0.01 280);
+  --sidebar-foreground: oklch(0.95 0.02 180);
+  --sidebar-primary: oklch(0.8 0.3 280);
+  --sidebar-primary-foreground: oklch(0.02 0 0);
+  --sidebar-accent: oklch(0.08 0.02 320);
+  --sidebar-accent-foreground: oklch(0.9 0.2 340);
+  --sidebar-border: oklch(0.15 0.03 280);
+  --sidebar-ring: oklch(0.8 0.3 280);
+}
+
+.dark {
+  /* Authentic Space Theme - Enhanced cosmic elements for dark mode */
+  --background: oklch(0.01 0 0); /* Absolute black hole void */
+  --foreground: oklch(0.99 0.05 180); /* Ultra bright star white */
+  --card: oklch(0.03 0.02 280); /* Deeper nebula void */
+  --card-foreground: oklch(0.97 0.03 180);
+  --popover: oklch(0.03 0.02 280);
+  --popover-foreground: oklch(0.97 0.03 180);
+  --primary: oklch(0.9 0.35 280); /* Bright nebula purple */
+  --primary-foreground: oklch(0.01 0 0);
+  --secondary: oklch(0.06 0.03 320); /* Deep cosmic void */
+  --secondary-foreground: oklch(0.95 0.25 340); /* Bright cosmic pink */
+  --muted: oklch(0.02 0.01 280);
+  --muted-foreground: oklch(0.75 0.15 180); /* Bright starlight */
+  --accent: oklch(0.9 0.4 200); /* Ultra bright electric star */
+  --accent-foreground: oklch(0.01 0 0);
+  --destructive: oklch(0.8 0.35 15); /* Bright supernova red */
+  --destructive-foreground: oklch(0.99 0.05 180);
+  --border: oklch(0.12 0.04 280);
+  --input: oklch(0.02 0.01 280);
+  --ring: oklch(0.9 0.35 280); /* Bright nebula ring */
+  --chart-1: oklch(0.9 0.35 280); /* Bright nebula purple */
+  --chart-2: oklch(0.9 0.4 200); /* Ultra bright electric star */
+  --chart-3: oklch(0.95 0.3 340); /* Ultra cosmic pink */
+  --chart-4: oklch(0.85 0.3 60); /* Bright star amber */
+  --chart-5: oklch(0.9 0.35 180); /* Bright cyan star */
+  --sidebar: oklch(0.03 0.02 280);
+  --sidebar-foreground: oklch(0.97 0.03 180);
+  --sidebar-primary: oklch(0.9 0.35 280);
+  --sidebar-primary-foreground: oklch(0.01 0 0);
+  --sidebar-accent: oklch(0.06 0.03 320);
+  --sidebar-accent-foreground: oklch(0.95 0.25 340);
+  --sidebar-border: oklch(0.12 0.04 280);
+  --sidebar-ring: oklch(0.9 0.35 280);
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-orbitron: var(--font-orbitron);
+  --font-space-mono: var(--font-space-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Star field animation */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+      radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.8), transparent),
+      radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+      radial-gradient(2px 2px at 160px 30px, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 200px 90px, rgba(255,255,255,0.7), transparent),
+      radial-gradient(2px 2px at 250px 60px, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 300px 20px, rgba(255,255,255,0.8), transparent),
+      radial-gradient(1px 1px at 350px 80px, rgba(255,255,255,0.5), transparent),
+      radial-gradient(2px 2px at 400px 40px, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 450px 70px, rgba(255,255,255,0.4), transparent),
+      radial-gradient(2px 2px at 500px 30px, rgba(255,255,255,0.7), transparent),
+      radial-gradient(1px 1px at 550px 90px, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 600px 50px, rgba(255,255,255,0.6), transparent),
+      radial-gradient(2px 2px at 650px 20px, rgba(255,255,255,0.8), transparent),
+      radial-gradient(1px 1px at 700px 80px, rgba(255,255,255,0.4), transparent),
+      radial-gradient(2px 2px at 750px 60px, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 800px 30px, rgba(255,255,255,0.7), transparent),
+      radial-gradient(1px 1px at 850px 70px, rgba(255,255,255,0.6), transparent),
+      radial-gradient(2px 2px at 900px 40px, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 950px 90px, rgba(255,255,255,0.8), transparent),
+      radial-gradient(2px 2px at 1000px 50px, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 1050px 20px, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 1100px 80px, rgba(255,255,255,0.7), transparent),
+      radial-gradient(2px 2px at 1150px 60px, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 1200px 30px, rgba(255,255,255,0.8), transparent),
+      radial-gradient(2px 2px at 1250px 70px, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 1300px 40px, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 1350px 90px, rgba(255,255,255,0.7), transparent),
+      radial-gradient(2px 2px at 1400px 50px, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 1450px 20px, rgba(255,255,255,0.8), transparent),
+      radial-gradient(2px 2px at 1500px 80px, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 1550px 60px, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 1600px 30px, rgba(255,255,255,0.7), transparent),
+      radial-gradient(2px 2px at 1650px 70px, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 1700px 40px, rgba(255,255,255,0.8), transparent),
+      radial-gradient(2px 2px at 1750px 90px, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 1800px 50px, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 1850px 20px, rgba(255,255,255,0.7), transparent),
+      radial-gradient(2px 2px at 1900px 80px, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 1950px 60px, rgba(255,255,255,0.8), transparent);
+    background-repeat: repeat;
+    background-size: 2000px 100px;
+    animation: twinkle 4s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Nebula effect overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+      radial-gradient(ellipse at 20% 80%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(255, 20, 147, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 40% 40%, rgba(0, 191, 255, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  @keyframes twinkle {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-100px); }
+  }
+
+  /* Cosmic dust particles */
+  .cosmic-dust::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1px 1px at 30% 60%, rgba(138,43,226,0.2), transparent),
+      radial-gradient(1px 1px at 70% 40%, rgba(255,20,147,0.15), transparent),
+      radial-gradient(1px 1px at 90% 80%, rgba(0,191,255,0.1), transparent);
+    background-size: 100px 100px;
+    animation: drift 20s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes drift {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(-100px) translateY(-100px); }
+  }
+}
