@@ -3,16 +3,28 @@
 export function EventsSection() {
   const eventCategories = [
     {
-      title: "Ignition",
+      title: "Stellar Origins: Hyderabad",
       description: "Kickstart your journey with foundational sessions and networking",
     },
     {
-      title: "Incursion",
+      title: "Stellar Origins: IIIT Nagpur",
       description: "Deep dive into building, brainstorming, and technical workshops",
     },
     {
-      title: "Collision",
+      title: "Stellar Buil Camp: IIT Mandi",
       description: "High-energy showcases, demos, and collaborative challenges",
+    },
+    {
+      title: "Stellar Origins: Ahemdabad",
+      description: "Deep dive into building, brainstorming, and technical workshops",
+    },
+    {
+      title: "Stellar Origins: Bhopal",
+      description: "Deep dive into building, brainstorming, and technical workshops",
+    },
+    {
+      title: "Stellar Origins: Vizag",
+      description: "Deep dive into building, brainstorming, and technical workshops",
     },
   ]
 
@@ -34,12 +46,6 @@ export function EventsSection() {
               <p className="text-gray-300 leading-relaxed">{category.description}</p>
             </div>
           ))}
-        </div>
-
-        <div className="bg-card border border-border rounded-xl p-8">
-          <p className="text-gray-300 text-center">
-            ✨ Section for people who made it possible: Inspo from FBI website
-          </p>
         </div>
       </div>
     </section>

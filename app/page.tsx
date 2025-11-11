@@ -5,7 +5,7 @@ import { VisionSection } from "@/components/vision-section"
 import { EventsSection } from "@/components/events-section"
 import { PartnersSection } from "@/components/partners-section"
 import { GallerySection } from "@/components/gallery-section"
-import { TeamSection } from "@/components/team-section"
+import TeamSection  from "@/components/team-section"
 import { NewsletterSection } from "@/components/newsletter-section"
 import { FooterSection } from "@/components/footer-section"
 
@@ -15,9 +15,9 @@ export default function Home() {
       <HeroSection />
       <VisionSection />
       <EventsSection />
+      <TeamSection />
       <PartnersSection />
       <GallerySection />
-      <TeamSection />
       <NewsletterSection />
       <FooterSection />
     </main>

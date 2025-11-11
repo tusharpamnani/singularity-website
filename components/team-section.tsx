@@ -1,32 +1,90 @@
-"use client"
+import Image from "next/image";
 
-export function TeamSection() {
-  const teamMembers = [
-    { name: "Builder One", role: "Co-founder" },
-    { name: "Builder Two", role: "Core Team" },
-    { name: "Builder Three", role: "Core Team" },
-    { name: "Builder Four", role: "Advisor" },
-  ]
+interface Member {
+  name: string;
+  image: string;
+  size: number;
+  position: string; // tailwind position classes
+}
 
+const members: Member[] = [
+  {
+    name: "Atharv",
+    image: "/images/image.png",
+    size: 290,
+    position: "top-0 left-0",
+  },
+  {
+    name: "Akash",
+    image: "/images/image.png",
+    size: 260,
+    position: "top-16 right-40",
+  },
+  {
+    name: "Tushar",
+    image: "/images/image.png",
+    size: 230,
+    position: "top-36 left-80",
+  },
+  {
+    name: "Anke",
+    image: "/images/image.png",
+    size: 180,
+    position: "bottom-0 left-24",
+  },
+  {
+    name: "Anshul",
+    image: "/images/image.png",
+    size: 200,
+    position: "bottom-5 left-120",
+  },
+  {
+    name: "Dhanush",
+    image: "/images/image.png",
+    size: 130,
+    position: "bottom-16 right-32",
+  },
+  {
+    name: "Akash",
+    image: "/images/image.png",
+    size: 220,
+    position: "top-44 right-0",
+  },
+];
+
+export default function FloatingTeam() {
   return (
-    <section className="py-24 px-4 md:px-8 bg-background border-b border-border">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">The Team Behind</h2>
-        <p className="text-gray-400 mb-16 max-w-2xl">Meet the visionaries making Singularity possible</p>
+    <div>
+      <h1 className="text-center font-extrabold text-5xl">The Team Who Made It Possible</h1>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {teamMembers.map((member, i) => (
+    <section className="relative flex justify-center items-center min-h-[600px] bg-black">
+      <div className="relative w-full max-w-5xl h-[600px]">
+        {members.map((member) => (
+          <div
+            key={member.name}
+            className={`absolute ${member.position} flex flex-col items-center`}
+            style={{ width: member.size }}
+          >
             <div
-              key={i}
-              className="bg-card border border-border rounded-xl p-6 text-center hover:border-cyan-400 transition-colors"
+              className={`rounded-full border-[6px] border-blue-100 shadow-lg overflow-hidden`}
+              style={{ width: member.size, height: member.size }}
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full mx-auto mb-4" />
-              <h3 className="font-semibold mb-2">{member.name}</h3>
-              <p className="text-sm text-gray-400">{member.role}</p>
+              <Image
+                src={member.image}
+                alt={member.name}
+                width={member.size}
+                height={member.size}
+                className="object-cover"
+              />
             </div>
-          ))}
-        </div>
+
+            <span className="mt-2 px-4 py-1 text-white bg-blue-600 rounded-full text-sm font-semibold">
+              {member.name}
+            </span>
+          </div>
+        ))}
       </div>
     </section>
-  )
+    </div>
+  );
 }
