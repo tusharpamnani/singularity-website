@@ -2,13 +2,15 @@
 
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export function HeroSection() {
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-black">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <video autoPlay muted loop className="w-full h-full object-cover opacity-30" src="/beach-waves-ocean-video.jpg" />
+        {/* <video autoPlay muted loop className="w-full h-full object-cover opacity-30" src="/beach-waves-ocean-video.jpg" /> */}
+        <Image src={"/image.png"} alt="Background" fill className="object-cover opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
       </div>
 
